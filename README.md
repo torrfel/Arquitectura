@@ -23,55 +23,100 @@ En este caso, la jerarquía comienza con un proceso padre (`P0`) que posee tres 
 
 El orden de finalización de los procesos hijos es aleatorio debido a la función `sleep(random() % 5)`, que introduce tiempos de espera distintos.  
 
-El proceso padre imprime un mensaje cada vez que uno de los hijos finaliza:  
-1. Primero, se genera el mensaje de terminación de un hijo aleatorio.  
-2. Luego, se muestra el mensaje del padre.  
-3. Este ciclo se repite hasta que todos los hijos han finalizado.
+Primero se genera el mensaje de terminación de un hijo aleatorio, luego se muestra el mensaje del padre, luego el mensaje de otro hijo, seguido nuevamente por el mensaje del padre, y finalmente el mensaje del hijo restante junto con el mensaje del padre. Esto se debe a que cada que un hijo termina, el padre imprime un mensaje "Fin del proceso..." y así para esperar el próximo hijo. 
 
 ---
 
 ## 3. Árbol de Procesos
 
 El árbol resultante del código es el siguiente:  
-*(Agregar diagrama o descripción del árbol según el código proporcionado)*
+"Archivo?????"
 
 ---
 
 ## 4. Procesos Modificados con `execlp`
 
-Los procesos que fueron modificados mediante la función `execlp` son identificados claramente en el código. Este cambio ocurre al reemplazar el programa actual por otro especificado en `execlp`.
+Los procesos que fueron modificados mediante la función `execlp` son identificados con `execlp`
+"Archivo ????"
 
 ---
 
-## 5. Problemas y Soluciones del Código
+## 5.Jerarquia de procesos del codigo dado
 
-### Problemas Detectados:
-a. El proceso padre no se inicializa correctamente.  
-b. La sincronización entre el proceso padre y los procesos hijos no se gestiona adecuadamente. El padre espera que los hijos finalicen sin control específico.  
-c. La instrucción `inicio = time(NULL)` debe ejecutarse antes de crear los procesos hijos.
-
-### Solución Propuesta:
-- Reestructurar el código para asegurar que el proceso padre inicializa correctamente.  
-- Sincronizar los tiempos entre padre e hijos mediante funciones como `wait()` o `waitpid()`.  
-- Asegurar que las operaciones iniciales se ejecuten antes de las llamadas a `fork()`.
+"Arrchiov 1 ??"
+Arquivo 2 ???
 
 ---
 
-## 6. Modificaciones del Código
-
-Se realizaron cambios para corregir errores y mejorar la funcionalidad:  
-1. Implementar `execlp` para ejecutar programas externos como `kcalc` o `xload`.  
-2. Añadir cálculos del tiempo de ejecución al programa principal.
-
+## 6. Herarquia de procesos 
+Archivoo1
+Archivoo2
 ---
 
-## 7. Ejemplo de Factorial
+## 7. Modificaciones del Código
 
-El siguiente programa calcula el factorial de un número, mostrando los resultados parciales en cada paso.
+Arquivooo
 
-### Comprobación del Funcionamiento
-Entrada:  
-```bash
-./factorial 5
+---
+## 8. Codigo -> encontrado en ...
+### Arbol de procesos:
+Arquivo""
+
+---
+## 9. Codigo perdido -> Encontrado en:
+### Arbol de procesos
+Archivoo""
+
+---
+## 10. Problemas y soluciones del código  
+
+a.  En el código no se inicializa el proceso padre de forma correcta  
+
+b. El tiempo no esta sincronizado de forma correcta en entre el procesos padre 	y el proceso hijo debido a que el proceso padre espera a que el hijo termine 
+
+c. inicio = time(NULL) se tiene que ejecutar antes de crear al proceso hijo  
+
+Solución del código: 
+---
+## 11. Codigo Modificado: 11.c
+Lo que está sucediendo es que, si kcalc se encuentra en una ruta de PATH, se cambiará el proceso y se ejecutará kcalc. Si, por otro lado, no se encuentra en esta variable, se sigue mostrando mensaje y se hacen cambios de proceso en xload en lugar de kcalc. 
+---
+## 12. Codigo: 12.c
+Se añade al programa anterior calculo del tiempo
+---
+## 13 Codigo: 13.c
+Escritura con simulacion de tiempo
+---
+## 14. Programa dado 
+### a. Comprobación de funcionamiento del código: 
+    Entrada -> ./p15 
+    Salida ->  
+    Programa: programa1 
+    Esperar? Si 
+    Programa: programa1 
+    Esperar? No 
+    Programa: salir 
+### Modificaciones del código: 14.c
+---
+## 15 Programa para calcular factoriales
+### a. Comprobar funcionamiento:
+    Entreda ->./factorial 5 
+    Salida -> Factorial de 5, resultado parcial 2 
+    Factorial de 5, resultado parcial 6 
+    Factorial de 5, resultado parcial 24 
+    Factorial de 5, resultado parcial 120 
+    El factorial de 5 es 120 
+### b.Pograma que  recibe dos números: 15b.c
+### c. Que el proceso padre sea el ultimio en terminar: 15c.c
+---
+## 16. Generalizar la solución del punto anterior 
+### a. Proceso por cada factorial a calcular: 
+### b. El proceso padre tiene que esperar a los procesos hijos :
+### c. El mensaje del primer hijo no se imprime , pero los demas si :
+---
+## 17. Programa tiempo.c 
+
+
+
 
 
