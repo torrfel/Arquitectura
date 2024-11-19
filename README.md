@@ -80,15 +80,15 @@ Solución del código:
 ---
 ## 11. Codigo Modificado: 11.c
 
-Lo que está sucediendo es que, si kcalc se encuentra en una ruta de PATH, se cambiará el proceso y se ejecutará kcalc. Si, por otro lado, no se encuentra en esta variable, se sigue mostrando mensaje y se hacen cambios de proceso en xload en lugar de kcalc. 
+#### Lo que está sucediendo es que, si kcalc se encuentra en una ruta de PATH, se cambiará el proceso y se ejecutará kcalc. Si, por otro lado, no se encuentra en esta variable, se sigue mostrando mensaje y se hacen cambios de proceso en xload en lugar de kcalc. 
 ---
 ## 12. Codigo: 12.c
 
-Se añade al programa anterior calculo del tiempo
+#### Se añade al programa anterior calculo del tiempo
 ---
 ## 13 Codigo: 13.c
 
-Escritura con simulacion de tiempo
+#### Escritura con simulacion de tiempo
 ---
 ## 14. Programa dado 
 
