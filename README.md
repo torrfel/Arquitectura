@@ -1,4 +1,4 @@
-1. La jerarquía de procesos del código empezaría con un proceso padre (en este caso P0), el cual posee un hijo (P1), este tiene otro hijo más (P2) y por último este tiene uno más (P3). 
+#1. La jerarquía de procesos del código empezaría con un proceso padre (en este caso P0), el cual posee un hijo (P1), este tiene otro hijo más (P2) y por último este tiene uno más (P3). 
 
 		 
 
