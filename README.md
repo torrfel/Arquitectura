@@ -1,155 +1,77 @@
-#1. La jerarquía de procesos del código empezaría con un proceso padre (en este caso P0), el cual posee un hijo (P1), este tiene otro hijo más (P2) y por último este tiene uno más (P3). 
+# Jerarquía y Comportamiento de Procesos en C
 
-		 
+## 1. Jerarquía de Procesos (Caso 1)
 
-¿Por qué aparecen mensajes repetidos? 
+La jerarquía de procesos comienza con un proceso padre (`P0`), que posee un hijo (`P1`). Este, a su vez, tiene otro hijo (`P2`), y finalmente este último crea un hijo más (`P3`).
 
-Esto es debido a la función fork que llamamos, pues este crea procesos nuevos y ejecuta desde el punto donde se llamó a la función. Al ejecutarse la misma parte de código para el proceso padre e hijo, cada uno imprime un mensaje, entonces se repite 
+### Mensajes Repetidos
 
-Orden de terminación: 
+Esto sucede debido a la función `fork()` utilizada en el código. Esta función crea nuevos procesos que comienzan a ejecutarse desde el punto donde se llamó a `fork()`. Como el mismo bloque de código se ejecuta para el proceso padre e hijo, cada uno imprime su mensaje correspondiente, generando repetición.
 
-Se observa que hay veces en el cual el proceso padre no imprime su mensaje primero que sus hijos. Esto es debido a que ambos procesos pueden ejecutarse a la vez, pero los hijos pueden terminar en momentos diferentes. 
+### Orden de Terminación
 
-Dependiendo de lo aleatorio de la función sleep(random()%) algunos procesos pueden terminar antes que otros. Esto debido a que hay un retraso mayor o menor en algunos procesos, lo que hace que unos terminen antes que otros. 
+En ocasiones, el proceso padre no imprime su mensaje antes que sus hijos. Esto ocurre porque ambos procesos (padre e hijos) pueden ejecutarse concurrentemente, pero los hijos pueden finalizar en momentos diferentes.  
+Dependiendo de lo aleatorio de la función `sleep(random() % X)`, algunos procesos terminan antes que otros debido a los retrasos variables introducidos.
 
-2. Su jerarquía empieza con un proceso padre (P0), el cual posee tres hijos más (P1, P2 y P3													 
+---
 
- 
+## 2. Jerarquía de Procesos (Caso 2)
 
-Orden de terminación: 
+En este caso, la jerarquía comienza con un proceso padre (`P0`) que posee tres hijos (`P1`, `P2`, `P3`).
 
-Los procesos hijos pueden terminar en cualquier orden. Esto es debido a la función sleep(random() % 5) lo que hace que cada uno de ellos puedo demorar un tiempo diferente. 
+### Orden de Terminación
 
-Primero se genera el mensaje de terminación de un hijo aleatorio, luego se muestra el mensaje del padre, luego el mensaje de otro hijo, seguido nuevamente por el mensaje del padre, y finalmente el mensaje del hijo restante junto con el mensaje del padre. Esto se debe a que cada que un hijo termina, el padre imprime un mensaje "Fin del proceso..." y así para esperar el próximo hijo. 
+El orden de finalización de los procesos hijos es aleatorio debido a la función `sleep(random() % 5)`, que introduce tiempos de espera distintos.  
 
- 
+El proceso padre imprime un mensaje cada vez que uno de los hijos finaliza:  
+1. Primero, se genera el mensaje de terminación de un hijo aleatorio.  
+2. Luego, se muestra el mensaje del padre.  
+3. Este ciclo se repite hasta que todos los hijos han finalizado.
 
-3. El árbol es el siguiente 
+---
 
- 
+## 3. Árbol de Procesos
 
-4. Aquellos con ‘execlp’ son aquellos que fueron modificados por la función execlp. 
+El árbol resultante del código es el siguiente:  
+*(Agregar diagrama o descripción del árbol según el código proporcionado)*
 
- 
+---
 
- 
+## 4. Procesos Modificados con `execlp`
 
-5. Jerarquía de procesos del código dado 
+Los procesos que fueron modificados mediante la función `execlp` son identificados claramente en el código. Este cambio ocurre al reemplazar el programa actual por otro especificado en `execlp`.
 
-O 
+---
 
- 
+## 5. Problemas y Soluciones del Código
 
-6. Jerarquía de procesos 
+### Problemas Detectados:
+a. El proceso padre no se inicializa correctamente.  
+b. La sincronización entre el proceso padre y los procesos hijos no se gestiona adecuadamente. El padre espera que los hijos finalicen sin control específico.  
+c. La instrucción `inicio = time(NULL)` debe ejecutarse antes de crear los procesos hijos.
 
- 
+### Solución Propuesta:
+- Reestructurar el código para asegurar que el proceso padre inicializa correctamente.  
+- Sincronizar los tiempos entre padre e hijos mediante funciones como `wait()` o `waitpid()`.  
+- Asegurar que las operaciones iniciales se ejecuten antes de las llamadas a `fork()`.
 
-o 
+---
 
- 
+## 6. Modificaciones del Código
 
- 
+Se realizaron cambios para corregir errores y mejorar la funcionalidad:  
+1. Implementar `execlp` para ejecutar programas externos como `kcalc` o `xload`.  
+2. Añadir cálculos del tiempo de ejecución al programa principal.
 
- 
+---
 
-7. Jerarquía resultante del código  
+## 7. Ejemplo de Factorial
 
- 
+El siguiente programa calcula el factorial de un número, mostrando los resultados parciales en cada paso.
 
-8. Código: 
-
-
-
-Árbol de procesos: 
-
- 
-
-9. Código pedido: 
-
-
-
-Árbol de procesos 
-
- 
-
-10. Problemas y soluciones del código  
-
-a.  En el código no se inicializa el proceso padre de forma correcta  
-
-b. El tiempo no esta sincronizado de forma correcta en entre el procesos padre 	y el proceso hijo debido a que el proceso padre espera a que el hijo termine 
-
-c. inicio = time(NULL) se tiene que ejecutar antes de crear al proceso hijo  
-
-Solución del código: 
-
- 
-
-11.  Código modificado: ->11.c
-
-Lo que está sucediendo es que, si kcalc se encuentra en una ruta de PATH, se cambiará el proceso y se ejecutará kcalc. Si, por otro lado, no se encuentra en esta variable, se sigue mostrando mensaje y se hacen cambios de proceso en xload en lugar de kcalc. 
-
-12.  Añadir al programa anterior calculo del tiempo programa -> 13.c
-
- 
-13. Escritura con simulación de tiempo: programa -> programa -> 13.c
-
-
-14. Programa dado 
-
-Comprobación de funcionamiento del código: 
-
-Entrada -> ./p15
-
-Salida ->  
-
-Programa: programa1 
-
-Esperar? Si 
-
-Programa: programa1 
-
-Esperar? No 
-
-Programa: salir 
-
-Modificaciones del código: 14.c
-
- 
-
- 
-
-15. Programa para calcular factorial 
-
-
-a. Comprobar funcionamiento: 
-
-sleep (random()\%3); -> el “\” genera un error de sintaxis y no 	es necesario 
-
-Entreda ->./factorial 5 
-Salida -> 
-Factorial de 5, resultado parcial 2 
-Factorial de 5, resultado parcial 6 
-Factorial de 5, resultado parcial 24 
-Factorial de 5, resultado parcial 120 
-El factorial de 5 es 120 
-
-b.Pograma que  recibe dos números 15.b
-
-
-c. Que el proceso padre sea el ultimio en terminar programa -> 15.c
-
-
-16. Generalizar la solución del punto anterior 
-
-a. Proceso por cada factorial a calcular: programa -> 16.a
-
-
-b. El proceso padre tiene que esperar a los procesos hijos: programa -> 16.b
-
-
-c. El mensaje del primer hijo no se imprime , pero los demas si: programa -> 16.c
- 
-
-17. Programa tiempo.c 
+### Comprobación del Funcionamiento
+Entrada:  
+```bash
+./factorial 5
 
 
