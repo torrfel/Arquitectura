@@ -1,4 +1,5 @@
 # Jerarquía y Comportamiento de Procesos en C
+### Integrantes: Julian Santiago Florez Castañeda, Santiago Ramos Grateron, Caleb Santiago Salazar Chiquiza, Juan Felipe Torres Gomez
 
 ## 1. Jerarquía de Procesos (Caso 1)
 
