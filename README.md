@@ -60,8 +60,7 @@ Los procesos que fueron modificados mediante la función `execlp` son identifica
 ![p7](https://github.com/user-attachments/assets/a886a26d-4078-4456-9ba6-00fa87a3c739)
 
 ---
-## 8. Codigo -> encontrado en ...
-### Arbol de procesos:
+## 8. Arbol de procesos:
 ![p8](https://github.com/user-attachments/assets/9995968c-373e-4b88-9c56-3c3fc535aa45)
 
 ---
