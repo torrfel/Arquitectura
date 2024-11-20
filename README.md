@@ -65,7 +65,7 @@ Arquivo""
 ---
 ## 9. Codigo perdido -> Encontrado en:
 ### Arbol de procesos
-Archivoo""
+![P9](https://github.com/user-attachments/assets/a8747f95-4dc3-4928-a416-bed760d23ba8)
 
 ---
 ## 10. Problemas y soluciones del código  
