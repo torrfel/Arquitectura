@@ -65,7 +65,7 @@ Los procesos que fueron modificados mediante la función `execlp` son identifica
 ![p8](https://github.com/user-attachments/assets/9995968c-373e-4b88-9c56-3c3fc535aa45)
 
 ---
-## 9. Codigo perdido -> Encontrado en:
+## 9. Árbol de procesos del código pedido:
 ### Arbol de procesos
 ![P9](https://github.com/user-attachments/assets/a8747f95-4dc3-4928-a416-bed760d23ba8)
 
