@@ -4,6 +4,8 @@
 
 La jerarquía de procesos comienza con un proceso padre (`P0`), que posee un hijo (`P1`). Este, a su vez, tiene otro hijo (`P2`), y finalmente este último crea un hijo más (`P3`).
 
+![p1](https://github.com/user-attachments/assets/c2e7552c-459c-4a50-9a98-b5b43147fc18)
+
 ### Mensajes Repetidos
 
 Esto sucede debido a la función `fork()` utilizada en el código. Esta función crea nuevos procesos que comienzan a ejecutarse desde el punto donde se llamó a `fork()`. Como el mismo bloque de código se ejecuta para el proceso padre e hijo, cada uno imprime su mensaje correspondiente, generando repetición.
@@ -19,6 +21,8 @@ Dependiendo de lo aleatorio de la función `sleep(random() % X)`, algunos proces
 
 En este caso, la jerarquía comienza con un proceso padre (`P0`) que posee tres hijos (`P1`, `P2`, `P3`).
 
+![p2](https://github.com/user-attachments/assets/173766db-07c8-4b31-8764-dd9afe391aed)
+
 ### Orden de Terminación
 
 El orden de finalización de los procesos hijos es aleatorio debido a la función `sleep(random() % 5)`, que introduce tiempos de espera distintos.  
@@ -30,37 +34,35 @@ Primero se genera el mensaje de terminación de un hijo aleatorio, luego se mues
 ## 3. Árbol de Procesos
 
 El árbol resultante del código es el siguiente:  
-"Archivo?????"
+![p3](https://github.com/user-attachments/assets/de65b1a7-8aa8-40d8-8ad5-f8135634d2d6)
 
 ---
 
 ## 4. Procesos Modificados con `execlp`
 
 Los procesos que fueron modificados mediante la función `execlp` son identificados con `execlp`
-"Archivo ????"
+![p4](https://github.com/user-attachments/assets/df67c4b9-e9d0-4123-ac04-056c09849465)
 
 ---
 
 ## 5.Jerarquia de procesos del codigo dado
 
-"Arrchiov 1 ??"
-Arquivo 2 ???
+![p5](https://github.com/user-attachments/assets/01ba51e0-672f-4ad3-b03c-b2da64478eae)
 
 ---
 
 ## 6. Herarquia de procesos 
-Archivoo1
-Archivoo2
+![p6](https://github.com/user-attachments/assets/d5cd9922-8ba2-4182-b05f-963d1e25e3f1)
 ---
 
 ## 7. Modificaciones del Código
 
-Arquivooo
+![p7](https://github.com/user-attachments/assets/a886a26d-4078-4456-9ba6-00fa87a3c739)
 
 ---
 ## 8. Codigo -> encontrado en ...
 ### Arbol de procesos:
-Arquivo""
+![p8](https://github.com/user-attachments/assets/9995968c-373e-4b88-9c56-3c3fc535aa45)
 
 ---
 ## 9. Codigo perdido -> Encontrado en:
