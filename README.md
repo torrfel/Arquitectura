@@ -123,6 +123,14 @@ Solución del código:
 ## 17. Programa tiempo.c 
 
 
-
+---
+# Ejercicio de Hiilos 
+ -p26.c
+ -p27.c
+ -p28.c
+ -p29.c
+ -p30.c
+ -p31.c
+ -p32.c
 
 
